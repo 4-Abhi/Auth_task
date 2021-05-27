@@ -1,0 +1,13 @@
+.header_heading {
+  background: white;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+.profile {
+  color: white !important;
+  background: orangered;
+}
+.logout {
+  color: white !important;
+  background: green;
+}

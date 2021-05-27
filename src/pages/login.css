@@ -1,0 +1,31 @@
+.login_form_group {
+  display: flex;
+  justify-content: center;
+}
+.login_form {
+  width: 40%;
+  padding: 50px;
+  margin: 50px auto;
+  border: 1px solid black;
+}
+
+.form_group {
+  margin: 10px 0px;
+}
+.form_group label {
+  display: flex;
+  margin-left: 0px !important;
+}
+
+.login_submit {
+  justify-content: center;
+
+  padding: 10px 0px;
+  color: white;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  background: orangered;
+  font-size: 16px;
+  border: 1px solid black;
+}
