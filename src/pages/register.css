@@ -8,7 +8,6 @@
 .register_form {
   margin: 50px auto;
   width: 30%;
-
   display: flex;
   flex-direction: column;
 }
@@ -20,4 +19,11 @@ p {
 .register_submit {
   margin: 20px 0px;
   font-size: 16px;
+}
+.form_group select {
+  width: 100%;
+}
+.gender {
+  display: flex;
+  margin-top: 10px;
 }

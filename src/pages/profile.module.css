@@ -1,0 +1,11 @@
+.profile {
+  width: 80%;
+  margin: 20px auto;
+}
+.col {
+  width: 50%;
+  margin: 20px auto;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}

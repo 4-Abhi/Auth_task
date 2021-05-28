@@ -53,8 +53,10 @@ export const Signup = (userdata) => async (dispatch) => {
       email: userdata.email,
       password: userdata.password,
       confirmPassword: userdata.confirmPassword,
+      hobby: userdata.hobby,
+      gender: userdata.gender,
     });
-    console.log("datatat0", data);
+
     dispatch({
       type: LOGIN_SUCCESS,
       payload: data.user,

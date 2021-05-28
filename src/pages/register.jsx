@@ -12,6 +12,7 @@ const Register = ({ history }) => {
   const dispatch = useDispatch();
   const {
     register,
+
     handleSubmit,
     watch,
     formState: { errors },
@@ -27,7 +28,6 @@ const Register = ({ history }) => {
     }
   }, [history, userInfo]);
   const onSubmit = (data) => {
-    console.log("datatat0", data);
     dispatch(Signup(data));
   };
 
@@ -60,6 +60,24 @@ const Register = ({ history }) => {
             })}
           />
           {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+        </div>
+        <div className="form_group">
+          <label htmlFor="hobby">Select Hobby</label>
+          <select {...register("hobby")}>
+            <option value="Cricket">Cricket</option>
+            <option value="Football">FOOTBALL</option>
+            <option value="other">OTHER</option>
+          </select>
+        </div>
+
+        <div className="form_group ">
+          <label htmlFor="gender"> Select Gender</label>
+          <div className="gender" {...register("gender", { required: true })}>
+            Male <input type="radio" name="gender" value="male" />
+            Female <input type="radio" name="gender" value="female" />
+            Other <input type="radio" name="gender" value="other" />
+          </div>
+          {errors.gender && <p>gender is Required</p>}
         </div>
 
         <button className="register_submit">Submit</button>
