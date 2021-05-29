@@ -30,7 +30,7 @@ const Profile = ({ history }) => {
     }
     callServer();
   }, [userInfo, history]);
-  //   console.log("userrrrrr", user);
+  console.log("userrrrrr", user);
   return (
     <div className={style.profile}>
       <h2>Your Profile</h2>
@@ -41,7 +41,10 @@ const Profile = ({ history }) => {
         <span>email : </span> <span>{user.email}</span>
       </div>
       <div className={style.col}>
-        <span>hobby : </span> <span> {user.hobby}</span>
+        Items
+        {user.hobby.map((item) => (
+          <p key={item}>{item}</p>
+        ))}
       </div>
       <div className={style.col}>
         <span>Gender : </span> <span>{user.gender} </span>

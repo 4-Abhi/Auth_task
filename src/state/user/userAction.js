@@ -48,6 +48,7 @@ export const Signup = (userdata) => async (dispatch) => {
     dispatch({
       type: USER_REGISTER_REQUEST,
     });
+
     const { data } = await axios.post("http://localhost:4004/api/user/signup", {
       name: userdata.name,
       email: userdata.email,

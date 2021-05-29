@@ -12,7 +12,6 @@ const Register = ({ history }) => {
   const dispatch = useDispatch();
   const {
     register,
-
     handleSubmit,
     watch,
     formState: { errors },
@@ -27,9 +26,14 @@ const Register = ({ history }) => {
       return history.push("/");
     }
   }, [history, userInfo]);
+
   const onSubmit = (data) => {
+    console.log("datatatat is ", data);
+
     dispatch(Signup(data));
   };
+
+  const hobbys = "cricket football hockey".split(" ");
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -40,6 +44,15 @@ const Register = ({ history }) => {
           <label htmlFor="Name">Name</label>
           <input {...register("name", { required: true })} />
           {errors.name && <p>This field is required</p>}
+        </div>
+        <div className="form_group">
+          <label htmlFor="hobby">Hobby</label>
+          {hobbys.map((hobby, i) => (
+            <label key={i}>
+              <input type="checkbox" value={hobby} {...register("hobby")} />
+              {hobby}
+            </label>
+          ))}
         </div>
         <div className="form_group">
           <label htmlFor="email">Email</label>
@@ -60,14 +73,6 @@ const Register = ({ history }) => {
             })}
           />
           {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
-        </div>
-        <div className="form_group">
-          <label htmlFor="hobby">Select Hobby</label>
-          <select {...register("hobby")}>
-            <option value="Cricket">Cricket</option>
-            <option value="Football">FOOTBALL</option>
-            <option value="other">OTHER</option>
-          </select>
         </div>
 
         <div className="form_group ">
